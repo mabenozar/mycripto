@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/pico.min.css">
+    <link rel="stylesheet" href="../static/css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet"> 
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><strong>myCRYPTO</strong></li>
+            </ul>
+            <ul>
+              <li><a href="/">Movements</a></li>
+              <li><a href="/purchase">Purchase</a></li>
+              <li><a href="/status">Status</a></li>
+            </ul>
+        </nav>
+    
+    </div>
+
+
+    <section class="container centro">
+        {% block contenido %}{% endblock %}
+    </section>
+    
+
+    <footer class="container centrado">
+        <p>&copy 2020 - All rights reserved</p>
+    </footer>
+</body>
+</html>

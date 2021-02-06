@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block titulo %} Movements {% endblock %}
+{% block contenido %}
+    <div class="container separador">
+        <div>
+            <hgroup>
+                <h3>Movements</h3>
+                <h6>Watchlist</h6>
+            <hgroup>
+        </div>
+        {% if data|length > 0 %}
+            <!-- <article> -->
+
+                <table role="grid">
+                    <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">From</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for registro in data %}
+                        <tr>
+                            <td>{{registro[0]}}</td>
+                            <td>{{registro[1]}}</td>
+                            <td>{{registro[2]}}</td>
+                            <td>{{registro[3]}}</td>
+                            <td>{{registro[4]}}</td>
+                            <td>{{registro[5]}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <footer>
+                    <a href="/status" role="button">Status</a>
+                    <a href="/purchase" role="button">+</a>
+                </footer>
+            <!-- </article>  -->
+            {% else %}
+                <div class="container">
+                    <div class="separator">
+                        <img src="/static/img/noting.png">
+                    </div>
+                </div>
+
+        {% endif %}
+    </div>
+    
+{% endblock %}

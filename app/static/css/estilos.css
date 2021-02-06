@@ -1,0 +1,51 @@
+
+html{
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+
+.icono{
+    font-size: 30px;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.container img{
+    display: block;
+    margin: auto;
+}
+
+.entorno{
+    border: 1px solid lightgray;
+    padding: 2rem;
+    border-radius: 7px;
+}
+
+.separador{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.calculadora{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+
+.error{
+    color: red;
+}
+
+submit:enabled{
+
+}
+
+
+submit:disabled{
+
+}

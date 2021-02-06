@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block titulo %} Purchase {% endblock %}
+
+{% block contenido %}
+<div class="container separador">
+    <div class="grid">
+        <h3>Purchase</h3>
+    </div>
+
+    <div class="grid">
+        <div></div>
+        <div>
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.selectFrom.label }}
+                {{ form.selectFrom }}
+
+                {{ form.quantityFrom.label }}
+                {{ form.quantityFrom }}
+                {% for error in form.quantityFrom.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+
+                {{ form.selectTo.label }}
+                {{ form.selectTo }}
+
+                <p class="error">
+                    {{ error }}
+                </p>
+
+                {% if btnDisabled %}
+                    <button type="submit" class="calculadora" disabled>
+                        <i class="fas fa-calculator"></i>
+                    </button>
+
+                    
+                    <a href="purchase" role="button" data-tooltip="Clear form">
+                        <i class="fas fa-times"></i>
+                    </a>
+
+                {% else %}
+                    <button type="submit" class="calculadora" data-tooltip="Calculate">
+                        <i class="fas fa-calculator"></i>
+                    </button>
+                {% endif %}
+            </form>
+
+            
+            <form action="" method="POST">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Quantity:</th>
+                            <th scope="col">Unit Price:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>{{ quantityTo }}</p>
+                            </td>
+                            <td>
+                                <p>{{ price }}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            {% if btnDisabled %}
+                <div class="separador">
+                    {{ form.purchase }}
+                </div>
+            {% endif %}    
+            </form>
+        </div>
+        <div></div>
+    </div>
+
+</div>
+{% endblock %}
